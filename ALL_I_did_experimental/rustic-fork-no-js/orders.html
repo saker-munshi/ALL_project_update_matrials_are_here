@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rustic Fork — Orders</title>
+  <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><span class="logo"></span> Rustic Fork <span class="sub">· KITCHEN</span></div>
+  <nav class="nav">
+    <a href="chef.html" >Dashboard</a>
+    <a href="orders.html" class="active">Orders</a>
+    <a href="recipes.html" >Recipes</a>
+    <a href="chat.html" >Chat</a>
+  </nav>
+  <div class="spacer"></div>
+  <a href="time.html" class="shift">Off Shift</a>
+  <div class="account-wrap">
+    <a href="chef.html" class="avatar">E</a>
+    <div class="account-name"><b>Elena K.</b><br>Kitchen · Grill Station</div>
+  </div>
+</header>
+
+<main>
+<div class="queue-head">
+      <div>
+        <h1>Order Queue</h1>
+        
+        <div class="tiny"><span id="gatedCount">1</span> gated · <span style="color:#20a34a" id="qReady">1</span> ready · <span style="color:#d88412" id="qPrep">2</span> in prep</div>
+      </div>
+      <button id="releaseSort" class="btn"> Release Time <span>⌄</span></button>
+    </div>
+
+    
+    <div class="filters">
+      <a class="pill active" href="orders.html">All <span>4</span></a>
+      <a class="pill" href="orders.html">Locked <span>1</span></a>
+      <a class="pill" href="orders.html">Unlocked <span>3</span></a>
+      <a class="pill" href="#gating">How gating works</a>
+    </div>
+
+    
+    <div class="queue-section">
+  <h3>Kitchen</h3>
+  <div class="queue-card"><div class="qtop"><b>RF-1042 · Table 12</b><span class="tag">Main</span></div><div class="items"><div>1 × Ribeye Steak</div><div>1 × Truffle Fries</div></div><div class="qactions"><span class="locktime">In preparation</span><a class="btn green" href="chef.html">Dashboard</a></div></div>
+  <div class="queue-card"><div class="qtop"><b>RF-1043 · Table 7</b><span class="tag">Rush</span></div><div class="items"><div>1 × Chicken Parmesan</div><div>1 × Caesar Salad</div></div><div class="qactions"><span class="locktime">Priority</span><a class="btn green" href="chef.html">Dashboard</a></div></div>
+</div>
+<div class="queue-section">
+  <h3>Ready</h3>
+  <div class="queue-card"><div class="qtop"><b>RF-1044 · Table 3</b><span class="tag">Ready</span></div><div class="items"><div>1 × Salmon Fillet</div><div>1 × Roasted Veg</div></div><div class="qactions"><span class="locktime">Ready now</span><a class="btn green" href="chef.html">Dashboard</a></div></div>
+</div>
+<div class="queue-section" id="gating"><h3>Gating</h3><p class="tiny">Orders can be reviewed here before moving back to the dashboard workflow.</p></div>
+</main>
+</body>
+</html>

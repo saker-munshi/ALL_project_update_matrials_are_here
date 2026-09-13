@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rustic Fork — Kitchen Dashboard</title>
+  <link rel="stylesheet" href="chef.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><span class="logo"></span> Rustic Fork <span class="sub">· KITCHEN</span></div>
+  <nav class="nav">
+    <a href="chef.html" class="active">Dashboard</a>
+    <a href="orders.html" >Orders</a>
+    <a href="recipes.html" >Recipes</a>
+    <a href="chat.html" >Chat</a>
+  </nav>
+  <div class="spacer"></div>
+  <a href="time.html" class="shift">Off Shift</a>
+  <div class="account-wrap">
+    <a href="chef.html" class="avatar">E</a>
+    <div class="account-name"><b>Elena K.</b><br>Kitchen · Grill Station</div>
+  </div>
+</header>
+
+<main>
+<div class="dash-head">
+      <div>
+        <h1>Order Queue</h1>
+        <div class="muted">Manage and track all incoming orders</div>
+      </div>
+  
+      <div class="dash-tools">
+        <label class="dash-search">
+          <span>⌕</span>
+          <input id="dashSearch" placeholder="Search orders..." autocomplete="off">
+        </label>
+        <select id="dashCategory" class="dash-select">  <!-- ata keno red dekhacce bujtase na -->
+          <option value="all">All Categories</option>
+          <option value="Main">Main</option>
+          <option value="Appetizer">Appetizer</option>
+          <option value="Salad">Salad</option>
+          <option value="Drinks">Drinks</option>
+          <option value="Dessert">Dessert</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="dash-layout">
+      <div class="dash-board">
+        
+        <section class="dash-column">
+          <div class="dash-column-head kitchen">
+            <span> <b>Kitchen</b></span>
+            <span class="dash-count orange" id="dashKitchenCount">2 orders</span>
+          </div>
+          <div class="dash-cards">
+  <article class="dash-order"><div class="dash-order-top"><h3>Table 12</h3><span class="tag">RF-1042</span></div><div class="dash-meta">Ribeye Steak · Grill</div><div class="dash-items"><div>1 × Ribeye Steak</div><div>1 × Truffle Fries</div></div><div class="dash-order-foot"><span class="dash-timer">In preparation</span></div></article>
+  <article class="dash-order"><div class="dash-order-top"><h3>Table 7</h3><span class="tag">RF-1043</span></div><div class="dash-meta">Rush order</div><div class="dash-items"><div>1 × Chicken Parmesan</div><div>1 × Caesar Salad</div></div><div class="dash-order-foot"><span class="dash-timer">Priority</span></div></article>
+</div>
+        </section>
+
+      
+        <section class="dash-column">
+          <div class="dash-column-head ready">
+            <span> <b>Ready</b></span>
+            <span class="dash-count green" id="dashReadyCount">1 order</span>
+          </div>
+          <div class="dash-cards">
+  <article class="dash-order"><div class="dash-order-top"><h3>Table 3</h3><span class="tag">RF-1044</span></div><div class="dash-meta">Ready for pickup</div><div class="dash-items"><div>1 × Salmon Fillet</div><div>1 × Roasted Veg</div></div><div class="dash-order-foot"><a class="dash-action" href="orders.html">View Order</a></div></article>
+</div>
+        </section>
+
+      
+        <section class="dash-side">
+          <div class="dash-panel">
+            <div class="dash-panel-title"> Quick Actions</div>
+            <div class="quick-grid">
+              <a class="quick-btn" href="orders.html"><span>New Order</span></a>
+              <a class="quick-btn" href="orders.html"><span>View All</span></a>
+              <a class="quick-btn" href="recipes.html"><span>Add Recipe</span></a>
+              <a class="quick-btn" href="time.html"><span>Time Tracking</span></a>
+            </div>
+          </div>
+
+          <div class="dash-panel">
+            <div class="dash-panel-title"> Recent Activity</div>
+            
+            <div id="dashActivity"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+ 
+    <div class="dash-completed">
+      <div class="dash-completed-head">
+        <span><b>Completed</b> <span class="dash-count" id="dashCompletedCount">2</span></span>
+        <a class="btn" href="orders.html">View All Completed Orders</a>
+      </div>
+      
+      <div class="dash-completed-grid" id="dashCompletedCol"></div>
+    </div>
+</main>
+</body>
+</html>

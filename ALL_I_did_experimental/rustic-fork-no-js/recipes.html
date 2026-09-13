@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rustic Fork — Recipe Management</title>
+  <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><span class="logo"></span> Rustic Fork <span class="sub">· KITCHEN</span></div>
+  <nav class="nav">
+    <a href="chef.html" >Dashboard</a>
+    <a href="orders.html" >Orders</a>
+    <a href="recipes.html" class="active">Recipes</a>
+    <a href="chat.html" >Chat</a>
+  </nav>
+  <div class="spacer"></div>
+  <a href="time.html" class="shift">Off Shift</a>
+  <div class="account-wrap">
+    <a href="chef.html" class="avatar">E</a>
+    <div class="account-name"><b>Elena K.</b><br>Kitchen · Grill Station</div>
+  </div>
+</header>
+
+<main>
+<div class="rec-head">
+      <div>
+        <h1>Recipe Management</h1>
+        <div class="tiny"><span id="recipeCount">6</span> recipes in your library</div>
+      </div>
+      <a href="recipes.html" class="btn green">＋ Add Recipe</a>
+    </div>
+    <input id="recipeSearch" class="search" placeholder="⌕  Search recipes..."/>
+   
+    <div id="categories" class="cats"></div>
+ 
+    <div class="recipes" id="recipeGrid">
+  <article class="recipe"><div class="photo"><span class="time">25 min</span></div><div class="rbody"><h3>Ribeye Steak</h3><div class="easy">Easy</div><div class="rfoot"><span>Main</span><a href="orders.html">Use in Orders</a></div></div></article>
+  <article class="recipe"><div class="photo"><span class="time">35 min</span></div><div class="rbody"><h3>Chicken Parmesan</h3><div class="medium">Medium</div><div class="rfoot"><span>Main</span><a href="orders.html">Use in Orders</a></div></div></article>
+  <article class="recipe"><div class="photo"><span class="time">15 min</span></div><div class="rbody"><h3>Caesar Salad</h3><div class="easy">Easy</div><div class="rfoot"><span>Salad</span><a href="orders.html">Use in Orders</a></div></div></article>
+  <article class="recipe"><div class="photo"><span class="time">20 min</span></div><div class="rbody"><h3>Chocolate Lava Cake</h3><div class="hard">Hard</div><div class="rfoot"><span>Dessert</span><a href="orders.html">Use in Orders</a></div></div></article>
+</div>
+</main>
+</body>
+</html>

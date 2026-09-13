@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Rustic Fork — Kitchen Display System</title>
+
+<link href="styles.css" rel="stylesheet"/></head>
+<body data-page="recipes">
+<header class="top">
+<div class="brand"><span class="logo">⚒</span> Rustic Fork <span class="sub">· KITCHEN</span></div>
+<nav class="nav"><a data-screen="dashboard" href="dashboard.html">▦ Dashboard</a><a data-screen="orders" href="orders.html">▤ Orders</a><a class="active" data-screen="recipes" href="recipes.html">▥ Recipes</a><a data-screen="chat" href="chat.html">□ Chat</a></nav>
+<div class="spacer"></div>
+<button class="shift" id="shiftChip">● Off Shift</button>
+<div class="account-wrap">
+<button class="avatar" id="avatarBtn">E</button>
+<div class="account-menu" id="accountMenu">
+<div class="account-name"><b id="menuChef">Elena K.</b><span>Kitchen · Grill Station</span></div>
+<button id="accountDetailsBtn">👤 Account details</button>
+<button id="switchChefBtn">⇄ Switch chef</button>
+<button id="menuTimeBtn">◷ Time &amp; shifts</button>
+</div>
+</div>
+</header>
+<main>
+<section class="screen" id="dashboard">
+<div class="dash-head">
+<div>
+<h1>Order Queue</h1>
+<div class="muted">Manage and track all incoming orders</div>
+</div>
+<div class="dash-tools">
+<label class="dash-search">
+<span>⌕</span>
+<input autocomplete="off" id="dashSearch" placeholder="Search orders..."/>
+</label>
+<select class="dash-select" id="dashCategory">
+<option value="all">All Categories</option>
+<option value="Main">Main</option>
+<option value="Appetizer">Appetizer</option>
+<option value="Salad">Salad</option>
+<option value="Drinks">Drinks</option>
+<option value="Dessert">Dessert</option>
+</select>
+</div>
+</div>
+<div class="dash-layout">
+<div class="dash-board">
+<section class="dash-column">
+<div class="dash-column-head kitchen">
+<span>♨ <b>Kitchen</b></span>
+<span class="dash-count orange" id="dashKitchenCount">0 orders</span>
+</div>
+<div class="dash-cards" id="dashKitchenCol"></div>
+</section>
+<section class="dash-column">
+<div class="dash-column-head ready">
+<span>✓ <b>Ready</b></span>
+<span class="dash-count green" id="dashReadyCount">0 orders</span>
+</div>
+<div class="dash-cards" id="dashReadyCol"></div>
+</section>
+<section class="dash-side">
+<div class="dash-panel">
+<div class="dash-panel-title">⚡ Quick Actions</div>
+<div class="quick-grid">
+<button class="quick-btn" id="dashNewOrder">⊕<span>New Order</span></button>
+<button class="quick-btn" id="dashViewAll">☷<span>View All</span></button>
+<button class="quick-btn" id="dashAddRecipe">▥<span>Add Recipe</span></button>
+<button class="quick-btn" id="dashTimeTracking">◷<span>Time Tracking</span></button>
+</div>
+</div>
+<div class="dash-panel">
+<div class="dash-panel-title">◴ Recent Activity</div>
+<div id="dashActivity"></div>
+</div>
+</section>
+</div>
+</div>
+<div class="dash-completed">
+<div class="dash-completed-head">
+<span><b>Completed</b> <span class="dash-count" id="dashCompletedCount">0</span></span>
+<button class="btn" id="dashViewCompleted">View All Completed Orders</button>
+</div>
+<div class="dash-completed-grid" id="dashCompletedCol"></div>
+</div>
+</section>
+<section class="screen" id="orders">
+<div class="queue-head"><div><h1>Order Queue</h1><div class="tiny"><span id="gatedCount">0</span> gated · <span id="qReady" style="color:#39d56a">0</span> ready · <span id="qPrep" style="color:#dca91d">0</span> in prep</div></div><button class="btn" id="releaseSort">↕ Release Time <span>⌄</span></button></div>
+<div class="filters">
+<button class="pill active" data-filter="all">All <span id="allCount">0</span></button>
+<button class="pill" data-filter="locked">🔒 Locked <span id="lockedCount">0</span></button>
+<button class="pill" data-filter="unlocked">♧ Unlocked <span id="unlockedCount">0</span></button>
+<button class="pill" id="gatingInfo">ⓘ How gating works</button>
+</div>
+<div id="queue"></div>
+</section>
+<section class="screen active" id="recipes">
+<div class="rec-head"><div><h1>Recipe Management</h1><div class="tiny"><span id="recipeCount"></span> recipes in your library</div></div><button class="btn green" id="addRecipeBtn">＋ Add Recipe</button></div>
+<input class="search" id="recipeSearch" placeholder="⌕  Search recipes..."/>
+<div class="cats" id="categories"></div>
+<div class="recipes" id="recipeGrid"></div>
+</section>
+<section class="screen" id="chat">
+<div style="margin-bottom:15px"><h1>Kitchen Chat</h1><p class="muted">Team messages, service notes and handoffs.</p></div>
+<div class="chat-shell">
+<aside class="chat-list" id="chatPeople"></aside>
+<section class="chat-main">
+<div class="chat-head"><b id="chatWith">Kitchen Team</b><div class="tiny" id="chatStatus">Online</div></div>
+<div class="messages" id="messages"></div>
+<form class="chat-compose" id="chatForm"><input autocomplete="off" id="messageInput" placeholder="Message the kitchen…"/><button class="btn green">Send</button></form>
+</section>
+</div>
+</section>
+<section class="screen" id="time">
+<div class="time-layout">
+<div class="clockcard">
+<div class="section-title">SHIFT CLOCK</div>
+<div class="clocktime" id="clockTime">00:00:00</div>
+<div class="tiny" id="clockDate"></div>
+<div style="margin-top:9px;color:var(--orange);font-size:10px">♨ GRILL STATION</div>
+<button class="clockbtn" id="clockBtn">▶<br/>Clock In</button>
+<div class="time-actions">
+<button class="btn" data-adjust="-15">−15m</button>
+<button class="btn" data-adjust="15">+15m</button>
+<button class="btn" id="resetShift">Reset</button>
+</div>
+<div class="tiny" style="margin-top:10px">Time is saved automatically on this device.</div>
+</div>
+<div class="week"><div class="detail-row"><b>THIS WEEK</b><span style="color:var(--orange)">♨ <span id="weekHours">0h 00m</span> logged</span></div><div class="tiny" style="margin-top:9px">Progress to 40h</div><div class="bar"><i id="weekBar" style="width:0%"></i></div></div>
+<div class="shifts"><div class="section-title">RECENT SHIFTS</div><div id="shiftRows"></div></div>
+</div>
+</section>
+</main>
+<div class="modal-backdrop" id="modal">
+<div class="modal" id="modalBody"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+
+
+
+<script defer src="app.js"></script></body>
+</html>
